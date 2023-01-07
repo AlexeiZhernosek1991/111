@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block page_content %}
+<h1>ФОТО</h1>
+<br>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <p><input type="file" name="f"><br><br>
+    <input type="submit" value="Сохранить"></p>
+</form>
+
+<p> Ссылка на загруженный файл: <a href="{{ file_url }}">{{ file_url }} </a> </p>
+{% endblock %}
